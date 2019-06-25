@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<center>
+    <h2> Type anything slowly </h2>
+    <textarea id="txt" cols="40" rows="10" onkeydown="run()"></textarea>
+</center>
+<script>
+    let s=['L','E','A','R','N',' ', 'C','O','D','E',' ', 'W','I','T','H',' ', 'C','O','D','E','G','Y','M'];
+    let n='';
+    function run() {
+        let j=document.getElementById("txt").value.length;
+        if (j>0){
+            for (i=0;i<j;i++){
+                n+=s[i];
+                if (i==23) {
+                    document.getElementById("txt").value='';
+                    n='';
+                }
+            }
+        }
+        document.getElementById("txt").value=n;
+        n='';
+        setTimeout("run()", 0.1);
+    }
+</script>
+</body>
+</html>
